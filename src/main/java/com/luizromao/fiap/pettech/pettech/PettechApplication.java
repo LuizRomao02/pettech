@@ -6,8 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class PettechApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(PettechApplication.class, args);
-	}
-
+  public static void main(String[] args) {
+    SpringApplication.run(PettechApplication.class, args);
+  }
 }
