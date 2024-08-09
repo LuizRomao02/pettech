@@ -2,11 +2,12 @@ package com.luizromao.fiap.pettech.pettech.service;
 
 import com.luizromao.fiap.pettech.pettech.dto.ProductDTO;
 import com.luizromao.fiap.pettech.pettech.dto.form.ProductForm;
-import com.luizromao.fiap.pettech.pettech.entity.Product;
+import com.luizromao.fiap.pettech.pettech.entities.Product;
 import com.luizromao.fiap.pettech.pettech.infra.exception.ControllerNotFoundException;
 import com.luizromao.fiap.pettech.pettech.repository.ProductRepository;
 import com.luizromao.fiap.pettech.pettech.util.ConverterToDTO;
 import java.util.Collection;
+import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -37,7 +38,7 @@ public class ProductService {
 
   @Transactional(readOnly = true)
   public Collection<ProductDTO> findAll() {
-    return productRepository.findAll().stream().map(converterToDTO::toDto).toList();
+    return productRepository.findAll().stream().map(converterToDTO::toDto).collect(Collectors.toList());
   }
 
   @Transactional(readOnly = true)

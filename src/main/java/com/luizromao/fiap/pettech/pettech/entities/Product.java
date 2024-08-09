@@ -1,4 +1,4 @@
-package com.luizromao.fiap.pettech.pettech.entity;
+package com.luizromao.fiap.pettech.pettech.entities;
 
 import jakarta.persistence.*;
 import lombok.*;
